@@ -8,11 +8,14 @@ import { Product } from "../model/product.model";
 })
 export class StoreComponent{
 
-    selectedCategory: string | undefined
+    selectedCategory: string | undefined;
+    productsPerPage = 4;
+    selectedPage = 1;
 
     constructor(private repository: ProductRepository){}
 
     get products(): Product[]{
+        
         return this.repository.getProducts(this.selectedCategory);
     }
 
