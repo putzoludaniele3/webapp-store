@@ -13,8 +13,10 @@ let routing = RouterModule.forChild([
   { path: "main", component: AdminComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'auth' },
 ]);
+
 @NgModule({
   imports: [CommonModule, FormsModule, routing, MaterialFeatures],
   declarations: [AuthComponent, AdminComponent],
 })
+
 export class AdminModule {}
